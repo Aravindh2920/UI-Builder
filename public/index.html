@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Node UI Builder</title>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar" style="white-space: pre">
+            <h2>Sidebar</h2>
+            <button draggable="true" ondragstart="drag(event, 'a', 'hyperlink')">Add Hyperlink</button>
+            <button draggable="true" ondragstart="drag(event, 'div')">Add Label</button>
+            <button draggable="true" ondragstart="drag(event, 'button')">Add Button</button>
+            <button onclick="saveCanvas()">Save</button>
+        </div>
+        <div class="canvas" id="canvas">
+        </div>
+        <div class="property-editor">
+            <h2>Property Editor</h2>
+            <label for="element-type">Element Type:</label>
+            <select id="element-type" onchange="updateProperties()">
+                <option value="label">Label</option>
+                <option value="button">Button</option>
+                <option value="a">Hyperlink</option>
+            </select>
+            <label for="margin-top">Margin Top:</label>
+            <input type="text" id="margin-top" oninput="updateProperties()">
+            <label for="margin-right">Margin Right:</label>
+            <input type="text" id="margin-right" oninput="updateProperties()">
+            <label for="margin-bottom">Margin Bottom:</label>
+            <input type="text" id="margin-bottom" oninput="updateProperties()">
+            <label for="margin-left">Margin Left:</label>
+            <input type="text" id="margin-left" oninput="updateProperties()">
+            <label for="font-size">Font Size:</label>
+            <input type="text" id="font-size" oninput="updateProperties()">
+            <label for="color">Color:</label>
+            <input type="text" id="color" oninput="updateProperties()">
+            <label for="value">Value/Text:</label>
+            <input type="text" id="value" oninput="updateProperties()">
+            <label for="href">Hyperlink URL:</label>
+            <input type="text" id="href" oninput="updateProperties()">
+            <button onclick="removeElement()">Remove</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
